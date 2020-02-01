@@ -8,7 +8,7 @@
 - **Alexis Galaura**
 
 ### To-Do List
-- [ ] Create Landing Page
+- [X] Create Landing Page
 - [ ] Functions
 - [ ] Database (*MySQL*)
 
