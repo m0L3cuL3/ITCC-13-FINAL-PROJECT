@@ -1,5 +1,47 @@
-.class
-{
-	display: block;
-	color: #00ff00;
+@import url('https://fonts.googleapis.com/css?family=Amaranth&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #EDE5CC;
+}
+
+header {
+    width: auto;
+    height: 50px;
+    background-image: linear-gradient(to right, #982121, rgb(255, 63, 29), #E32929, #813531);
+    display: flex;
+}
+
+h1 {
+    color: white;
+    font-family: 'Amaranth';
+    font-size: 20pt;
+    position: fixed;
+    top: -10px;
+    left: 10px;
+}
+
+#header-btn-container {
+    position: relative;
+    margin-left: auto;
+    display: flex;
+}
+
+#homebtn,
+#prodbtn,
+#orderbtn,
+#contactbtn {
+    border: none;
+    color: white;
+    font-family: 'Amaranth';
+    background-color: transparent;
+    width: 10rem;
+}
+
+button:hover {
+    background-image: linear-gradient(to right top, #FF611D, #E32929, #813531);
+}
+
+.fa {
+    margin-right: 10px;
 }
