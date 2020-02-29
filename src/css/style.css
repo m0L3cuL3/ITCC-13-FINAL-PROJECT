@@ -1,15 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Amaranth&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+* {
+    box-sizing: content-box;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Amaranth';
+    overflow: hidden;
 }
 
 h1 {
-    overflow: hidden;
     font-size: 37px;
     text-shadow: 5px 5px #982121;
+}
+
+.body > #output {
+    background-image: linear-gradient(to left top, rgb(224, 89, 35), rgb(204, 29, 29));
+    position: relative;
+    width: 100%;
+    max-height: 100%;
 }
 
 #end-title {
@@ -17,23 +28,27 @@ h1 {
     font-size: 24px;
 }
 
-.container {
-    overflow: hidden;
-    position: relative;
-    height: 100vmax;
-    max-width: 100%;
-    background-color: #982121;
-}
-
-#header {
-    overflow-anchor: auto;
+.header {
+    overflow: none;
     width: 100%;
     height: 150px;
-    position: fixed;
+    position: absolute;
     text-align: center;
     font-size: 24px;
     color: white;
     background-image: linear-gradient(to right, #982121, rgb(255, 63, 29), #E32929, #813531);
+}
+
+.body {
+    overflow: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    position: relative;
+    top: 150px;
+    width: 100%;
+    height: 100vw;
+    background-image: linear-gradient(to right bottom, rgb(48, 48, 48),rgb(20, 20, 20), rgb(32, 32, 32));
 }
 
 .footer {
@@ -45,6 +60,7 @@ h1 {
 }
 
 .navbar {
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -107,7 +123,7 @@ button:focus {
 
   @media only screen and (max-width: 700px) {
     
-    #header {
+    .header {
         overflow: none;
         width: 100%;
         height: 385px;
@@ -116,6 +132,18 @@ button:focus {
         font-size: 24px;
         color: white;
         background-image: linear-gradient(to right, #982121, rgb(255, 63, 29), #E32929, #813531);
+    }
+
+
+    .body {
+        overflow: auto;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        top: 380px;
+        width: 100%;
+        height: 214vw;
+        background-image: linear-gradient(to right bottom, rgb(48, 48, 48),rgb(20, 20, 20), rgb(32, 32, 32));
     }
 
     .navbar {
