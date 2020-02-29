@@ -3,27 +3,51 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #EDE5CC;
     font-family: 'Amaranth';
 }
 
 h1 {
+    overflow: hidden;
+    font-size: 37px;
     text-shadow: 5px 5px #982121;
 }
 
-header {
+#end-title {
+    color: white;
+    font-size: 24px;
+}
+
+.container {
+    overflow: hidden;
+    position: relative;
+    height: 100vmax;
+    max-width: 100%;
+    background-color: #982121;
+}
+
+#header {
+    overflow-anchor: auto;
     width: 100%;
-    height: 250px;
+    height: 150px;
     position: fixed;
-    padding: 20px;
     text-align: center;
-    font-size: 35px;
+    font-size: 24px;
     color: white;
     background-image: linear-gradient(to right, #982121, rgb(255, 63, 29), #E32929, #813531);
 }
 
-.nav {
-    float: left;
+.footer {
+    position: absolute;
+    bottom: 1px;
+    background-image: linear-gradient(to right, #982121, rgb(255, 63, 29), #E32929, #813531);
+    width: 100%;
+    height: 75px;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     position: absolute;
     width: 100%;
     left: 50%;
@@ -32,6 +56,7 @@ header {
 }
 
 button {
+    margin: 5px;
     height: 50px;
     border: none;
     color: white;
@@ -55,8 +80,76 @@ button:focus {
     text-decoration: none;
 }
 
-
 .fa {
     color: white;
-    margin-right: 10px;
+    margin-right: 12px;
+}
+
+ /* width */
+ ::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(223, 112, 9);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(190, 21, 21);
+  } 
+
+  @media only screen and (max-width: 700px) {
+    
+    #header {
+        overflow: none;
+        width: 100%;
+        height: 385px;
+        position: fixed;
+        text-align: center;
+        font-size: 24px;
+        color: white;
+        background-image: linear-gradient(to right, #982121, rgb(255, 63, 29), #E32929, #813531);
+    }
+
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        left: 50%;
+        top: 65%;
+        transform: translate(-50%, -50%);
+    }
+    
+    button {
+        margin: 5px;
+        height: 50px;
+        border: none;
+        color: white;
+        font-family: 'Fredoka One';
+        background-image: linear-gradient(to right top, #FF611D, #E32929, #813531);
+        border-radius: 25px;
+        width: 10rem;
+    }
+    
+    button:hover {
+        background-image: linear-gradient(to right, #15dfdf, rgb(219, 13, 226));
+        cursor: pointer;
+
+    }
+    
+    button:focus {
+        background-image: linear-gradient(to right, #15dfdf, rgb(219, 13, 226));
+
+        outline: none;
+        text-decoration: none;
+    }
 }
