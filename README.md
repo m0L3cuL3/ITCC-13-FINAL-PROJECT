@@ -3,6 +3,7 @@
 Developed by *Information Technology Students.*
 
 ### Members
+
 - Sean Baang
 - Gecel Rodriguez
 - Michael Pagaran
@@ -10,8 +11,10 @@ Developed by *Information Technology Students.*
 - Alexis Galaura
 
 ### To-Do List
-- [ ] Create Landing Page
-- [ ] Javascript Functions
-- [ ] Database (*MySQL*)
 
-
+- [ ] Create Home Page
+- [ ] Create Product Page
+- [ ] Create Order Page
+- [ ] Create Contact Page
+- [ ] Identification of paymant method (e.g. PayPal, Mastercard, etc...)
+- [ ] Implement Database using MySQL
