@@ -1,47 +1,62 @@
 @import url('https://fonts.googleapis.com/css?family=Amaranth&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
 body {
     margin: 0;
     padding: 0;
     background-color: #EDE5CC;
-}
-
-header {
-    width: auto;
-    height: 50px;
-    background-image: linear-gradient(to right, #982121, rgb(255, 63, 29), #E32929, #813531);
-    display: flex;
+    font-family: 'Amaranth';
 }
 
 h1 {
-    color: white;
-    font-family: 'Amaranth';
-    font-size: 20pt;
+    text-shadow: 5px 5px #982121;
+}
+
+header {
+    width: 100%;
+    height: 250px;
     position: fixed;
-    top: -10px;
-    left: 10px;
+    padding: 20px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    background-image: linear-gradient(to right, #982121, rgb(255, 63, 29), #E32929, #813531);
 }
 
-#header-btn-container {
-    position: relative;
-    margin-left: auto;
-    display: flex;
+.nav {
+    float: left;
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, -50%);
 }
 
-#homebtn,
-#prodbtn,
-#orderbtn,
-#contactbtn {
+button {
+    height: 50px;
     border: none;
     color: white;
-    font-family: 'Amaranth';
-    background-color: transparent;
+    font-family: 'Fredoka One';
+    background-image: linear-gradient(to right top, #FF611D, #E32929, #813531);
+    border-radius: 25px;
     width: 10rem;
+    transition: 0.2s;
 }
 
 button:hover {
-    background-image: linear-gradient(to right top, #FF611D, #E32929, #813531);
+    background-image: linear-gradient(to right, #15dfdf, rgb(219, 13, 226));
+    cursor: pointer;
+    width: 12rem;
 }
 
+button:focus {
+    background-image: linear-gradient(to right, #15dfdf, rgb(219, 13, 226));
+    width: 12rem;
+    outline: none;
+    text-decoration: none;
+}
+
+
 .fa {
+    color: white;
     margin-right: 10px;
 }
