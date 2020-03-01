@@ -17,7 +17,8 @@ h1 {
 }
 
 .body > #output {
-    background-image: linear-gradient(to left top, rgb(224, 89, 35), rgb(204, 29, 29));
+    border: none;
+    background-image: linear-gradient(to left top, rgb(34, 34, 34), rgb(34, 34, 34), rgb(44, 44, 44));
     position: relative;
     width: 100%;
     max-height: 100%;
