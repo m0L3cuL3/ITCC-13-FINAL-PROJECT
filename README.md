@@ -10,6 +10,8 @@ Developed by *Information Technology Students.*
 - Edward Rosales
 - Alexis Galaura
 
+[Documentation](shorturl.at/ajPS4)
+
 ### To-Do List
 
 - [ ] Create Home Page
