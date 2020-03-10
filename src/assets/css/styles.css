@@ -1,3 +1,9 @@
+
+html
+{
+    scroll-behavior: smooth;
+}
+
 body
 {
     margin: 0;
@@ -15,7 +21,7 @@ body
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: rgb(88, 65, 65);
+    background-color: rgb(32, 30, 30);
     width: 100%;
     height: 70px;
     z-index: 1;
@@ -33,13 +39,12 @@ body
 {
     color: rgb(236, 236, 236);
     flex: 1 1 auto;
-    margin-left: 10%;
+    margin-left: 15%;
     letter-spacing: 1px;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 35px;
     text-decoration: none;
-    font-family: 'Rancho', cursive;
-    margin-right: 30px;
+    font-family: 'Spinnaker', sans-serif;
 }
 
 .nav a
@@ -112,7 +117,7 @@ header.introduction .intro-text .intro-heading
     background-size: cover;
 }
 
-.order-area, .about-area
+.order-area, .about-area, .track-area
 {
     position: relative;
     display: flex;
@@ -124,12 +129,12 @@ header.introduction .intro-text .intro-heading
     height: 100%;
 }
 
-.order-area
+.order-area, .about-area
 {
     background-color: rgb(241, 241, 241);
 }
 
-.about-area
+.track-area
 {
     background-color: rgb(214, 214, 214);
 }
@@ -142,8 +147,10 @@ header.introduction .intro-text .intro-heading
 
 h1
 {
-    font-size: 50px;
-    font-family: 'Rancho', cursive;
+    font-size: 40px;
+    letter-spacing: -2px;
+    font-weight: normal;
+    font-family: 'Spartan', sans-serif;
 }
 
 p
@@ -152,6 +159,99 @@ p
     line-height: 50px;
 }
 
+.inputField
+{
+    padding: 30px;
+    background-color: rgb(196, 196, 196);
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.075), 0 5px 20px 0 rgba(0, 0, 0, 0.205);
+    transition: 0.25s;
+}
+
+.input
+{
+    padding: 15px;
+    width: 80%;
+    color: #000000;
+    background-color: #fff;
+    border: 1px solid rgb(170, 63, 63);
+    outline: none;
+    transition: .25s;
+}
+
+.input:focus
+{
+    border-color: #313131;
+}
+
+.input:hover
+{
+    border-color: #313131;
+}
+
+.button
+{
+    background: #4ab382;
+	color: rgb(31, 31, 31);
+	border: 1px solid #4ab382;
+	font-size: 14px;
+	transition: .6s;
+    overflow: hidden;
+    transform: translate(0%, 0%);
+    height: 48px;
+    width: 181px;
+}
+
+.button:focus
+{
+	outline: none;
+}
+
+.button:before
+{
+	content: '';
+	display: block;
+	position: absolute;
+	background: rgba(255,255,255,.5);
+	width: 60px;
+	height: 100%;
+	left: 0;
+    top: 0;
+	opacity: .5s;
+	filter: blur(30px);
+	transform: translateX(-130px) skewX(-15deg);
+}
+
+.button:after
+{
+	content: '';
+	display: block;
+	position: absolute;
+	background: rgba(255,255,255,.2);
+	width: 30px;
+	height: 100%;
+	left: 30;
+	top: 0;
+	opacity: .5s;
+	filter: blur(30px);
+	transform: translate(-100px) scaleX(-15deg);
+}
+
+.button:hover
+{
+    background: #266e53;
+    border-color: #99d1a7;
+    color: #c2c2c2;
+    cursor: pointer;
+}
+
+.button:hover:before
+{
+	transform: translateX(300px) skewX(-15deg);
+	opacity: 1;
+	transition: .7s;
+}
+
+/* footer */
 .footer 
 {
     bottom: 0px;
@@ -198,9 +298,4 @@ p
     font-weight: lighter;
     margin-right: 5px;
     font-family: 'Spartan', sans-serif;
-}
-
-html
-{
-    scroll-behavior: smooth;
 }
