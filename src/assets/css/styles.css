@@ -166,6 +166,8 @@ header.introduction .intro-text .intro-heading
     color: rgb(236, 236, 236);
     background-image: url('./../img/3.png');
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .text-part
@@ -182,6 +184,7 @@ h1
     letter-spacing: -2px;
     font-weight: normal;
     margin-top: 5%;
+    font-family: 'Merienda One', cursive;
 }
 
 p
@@ -228,7 +231,7 @@ button#trackBtn
     width: 24vh;
 }
 
-button#checkoutBtn
+button.checkoutBtn
 {
     height: 50%;
     width: 100%;
@@ -237,18 +240,18 @@ button#checkoutBtn
     font-size: 2.5vh;
 }
 
-button#removeBtn
+button.removeBtn
 {
-    height: 11%;
-    width: 13%;
+    height: 8%;
+    width: 10%;
     position: absolute;
-    right: 3.5;
-    font-size: 2.56vh;
+    right: 6.5;
+    font-size: 2.26vh;
     background: rgb(184, 64, 64);
     border-color: rgb(184, 64, 64);
 }
 
-button#removeBtn:hover
+button.removeBtn:hover
 {
     background: #6e2626;
     border-color: #d19999;
@@ -365,7 +368,6 @@ button:hover:before
 /* products container design */
 .product-container
 {
-    /* background-color: pink; */
     width: 100%;
     height: 75%;
     flex-direction: row;
@@ -379,7 +381,8 @@ button:hover:before
     width: 30%;
     height: 100%;
     position: relative;
-    border: 1px solid #b1b1b1;
+    border: 1px solid #d3d3d3;
+    box-shadow: 0 5px 20px 0 rgba(44, 44, 44, 0.185);
 }
 
 .chosen-product-container
@@ -389,7 +392,7 @@ button:hover:before
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
-    scrollbar-width: none;
+    /* scrollbar-width: none; */
 }
 
 .chosen-product-item-list
@@ -399,7 +402,7 @@ button:hover:before
     height: 12.7%;
     flex-direction: row;
     display: inline-flex;
-    border-bottom: 1px solid #b1b1b1;
+    border-bottom: 1px solid #d3d3d3;
 }
 
 .chosen-product-details
@@ -413,16 +416,17 @@ button:hover:before
 
 p#product-name-cart
 {
-    width: 40vh;
-    font-size: 2.5vh;
+    /* background-color: #00eb7d; */
+    width: 30vh;
+    font-size: 1.8vh;
     margin: auto;
     letter-spacing: 0px;
     line-height: 3.1vh;
-    font-weight: normal;
+    font-weight: bold;
     /* display: inline; */
     position: relative;
     white-space: nowrap;
-    text-transform: capitalize;
+    text-transform: uppercase;
 
     -webkit-transform:translateX(100%);
     transform:translateX(100%);
@@ -451,6 +455,7 @@ p#cart-item-price
 {   
     line-height: 3vh;
     text-align: left;
+    font-weight: normal;
 }
 
 .chosen-product-functions
@@ -465,11 +470,25 @@ p#cart-item-price
 
 .item-quantity
 {
-    width: 15%;
-    right: 15%;
+    width: 14%;
+    /* height: 8%; */
+    right: 14%;
     position: absolute;
     font-size: 2vh;
 }
+
+/* input[type=number] 
+{
+    text-align: center;
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+{
+  -webkit-appearance: none;
+  margin: 0;
+} */
 
 .checkout-container
 {
@@ -478,14 +497,15 @@ p#cart-item-price
     height: 21%;
     position: absolute;
     bottom: 0;
-    border-top: 1px solid;
+    border-top: 1px solid #d3d3d3;
 }
 
-p#total-price
+p.total-price
 {
     text-align: center;
     line-height: 100%;
     font-size: 2.1vh;
+    color: #5a5a5a;
 }
 
 /* product LIST design */
@@ -506,19 +526,8 @@ p#total-price
     text-align: center;
 }
 
-/* #row1
-{
-    background-color: rgb(223, 147, 147);
-}
-
-#row2
-{
-    background-color: rgb(126, 70, 70);
-} */
-
 .row
 {
-    background-color: rgb(241, 241, 241);
     width: 32%;
     height: 100%;
     display: flex;
@@ -541,8 +550,30 @@ p#total-price
     display: block;
     flex-direction: row;
     align-items: center;
-    z-index: 1;
+    transition: 0.2s ease-in;
+    opacity: 1;
+    border-radius: 3px;
 }
+
+.add-to-cart
+{
+    position: relative;
+    top: 30%;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    margin-top: -4vh;
+    color: rgba(253, 227, 180, 0.89);
+    font-size: 13vh;
+    opacity: 0;
+    transition: 0.2s ease-in;
+}
+
+.add-to-cart:hover
+{
+    opacity: 1;
+}
+
 
 #image1
 {
@@ -574,14 +605,20 @@ p#total-price
     background-image: url('./../img/item6.png');
 }
 
+#image1, #image2, #image3, #image4, #image5, #image6
+{
+    box-shadow: 0 5px 5px 0 rgba(44, 44, 44, 0.199);
+}
+
 p.product-name
 {
     bottom: 0;
     font-size: 2vh;
     line-height: 0vh;
-    font-weight: 600;
+    color: #5a5a5a;
+    /* font-weight: 600; */
     text-transform: uppercase;
-
+    font-family: 'Poppins', sans-serif;
     /* -webkit-transform:translateX(100%);
     transform:translateX(100%);
     
@@ -595,4 +632,7 @@ p.item-price
     line-height: 1;
     font-size: 1.9vh;
     display: inline;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: #5a5a5a;
 }

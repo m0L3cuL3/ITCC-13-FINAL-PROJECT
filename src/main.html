@@ -3,7 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Spartan|Merienda+One&display=swap" rel="stylesheet">   
+    <script src="./js/order.js" async></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins|Spartan|Merienda+One&display=swap" rel="stylesheet">   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Italian Foods</title>
 </head>
@@ -33,28 +34,43 @@
                 <!-- CART -->
                 <div class="product-cart">
                     <div class="chosen-product-container">
-                        <div class="chosen-product-item-list">
+                        <!-- <div class="chosen-product-item-list">
                             <div class="chosen-product-details">
                                 <p class="product-name" id="product-name-cart">
-                                    Lami nga Spaghetti
+                                    Seafood Carbonara
                                 </p>
                                 <p class="item-price" id="cart-item-price">
-                                    ₱100.00
+                                    Php 899.99
                                 </p>
                             </div>
                             <div class="chosen-product-functions">
-                                <input type="number" class="item-quantity" min="1" max="99">
-                                <button id="removeBtn"><i class="fa fa-times" aria-hidden="true"></i>
+                                <input type="number" class="item-quantity">
+                                <button class="removeBtn"><i class="fa fa-times" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
+                        <div class="chosen-product-item-list">
+                            <div class="chosen-product-details">
+                                <p class="product-name" id="product-name-cart">
+                                    Tsuki Spaghetti
+                                </p>
+                                <p class="item-price" id="cart-item-price">
+                                    Php 499.99
+                                </p>
+                            </div>
+                            <div class="chosen-product-functions">
+                                <input type="number" class="item-quantity">
+                                <button class="removeBtn"><i class="fa fa-times" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div> -->
                     </div>
 
                     <!-- CHECKOUT BUTTON -->
                     <div class="checkout-container">
-                        <p id="total-price">Total: ₱100.00</p>
+                        <p class="total-price">Total: Php 100.00</p>
                         
-                        <button id="checkoutBtn">
+                        <button class="checkoutBtn">
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             Checkout
                         </button>
@@ -65,36 +81,72 @@
                 <div class="product-list">
                     <div class="product-row" id="row1">
                         <div class="row" id="item1">
-                            <div class="image" id="image1"></div>
+                            <div class="image" id="image1">
+                                <div class="hover">
+                                    <div class="add-to-cart">
+                                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
                             <p class="product-name">Tsuki Spaghetti</p>
-                            <p class="item-price" id="item-price">₱100.00</p>
+                            <p class="item-price" id="item-price">Php 499.99</p>
                         </div>
                         <div class="row" id="item2">
-                            <div class="image" id="image2"></div>
+                            <div class="image" id="image2">
+                                <div class="hover">
+                                    <div class="add-to-cart">
+                                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
                             <p class="product-name">Tsuki Pasta</p>
-                            <p class="item-price" id="item-price">₱100.00</p>
+                            <p class="item-price" id="item-price">Php 359.99</p>
                         </div>
                         <div class="row" id="item3">
-                            <div class="image" id="image3"></div>
+                            <div class="image" id="image3">
+                                <div class="hover">
+                                    <div class="add-to-cart">
+                                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
                             <p class="product-name">Italian Pizza</p>
-                            <p class="item-price" id="item-price">₱100.00</p>
+                            <p class="item-price" id="item-price">Php 1499.99</p>
                         </div>
                     </div>
                     <div class="product-row" id="row2">
                         <div class="row" id="item4">
-                            <div class="image" id="image4"></div>
+                            <div class="image" id="image4">
+                                <div class="hover">
+                                    <div class="add-to-cart">
+                                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
                             <p class="product-name">Marzia's Lasagna</p>
-                            <p class="item-price" id="item-price">₱100.00</p>
+                            <p class="item-price" id="item-price">Php 4999.99</p>
                         </div>
                         <div class="row" id="item5">
-                            <div class="image" id="image5"></div>
+                            <div class="image" id="image5">
+                                <div class="hover">
+                                    <div class="add-to-cart">
+                                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
                             <p class="product-name">Veggie Bread</p>
-                            <p class="item-price" id="item-price">₱100.00</p>
+                            <p class="item-price" id="item-price">Php 199.99</p>
                         </div>
                         <div class="row" id="item6">
-                            <div class="image" id="image6"></div>
+                            <div class="image" id="image6">
+                                <div class="hover">
+                                    <div class="add-to-cart">
+                                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
                             <p class="product-name">Seafood Carbonara</p>
-                            <p class="item-price" id="item-price">₱100.00</p>
+                            <p class="item-price" id="item-price">Php 899.99</p>
                         </div>
                     </div>
                 </div>
@@ -103,7 +155,7 @@
     </section>
     <section class="track-area" id="track">
         <div class="text-part">
-            <h1>Track the food you love!</h1>
+            <h1>Keep track of the food you ordered!</h1>
             <div class="inputField">
                 <input type="text" class="input" placeholder="Reference Number">
                 <button id="trackBtn">Track</button>
