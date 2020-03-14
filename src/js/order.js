@@ -37,7 +37,7 @@ function checkoutClicked() {
 
 function removeCartItem(event) {
     var buttonClicked = event.target
-    buttonClicked.parentElement.parentElement.remove()
+    buttonClicked.parentElement.parentElement.parentElement.remove()
     updateCartTotal()
 }
 
@@ -61,7 +61,7 @@ function addToCartClicked(event) {
 
 function addItemtoCart(title, price) {
     var cartRow = document.createElement('div')
-    cartRow.classList.add('chosen-product-item-list')
+    cartRow.classList.add('cart-item-container')
     var cartItems = document.getElementsByClassName('chosen-product-container')[0]
     var cartItemNames = cartItems.getElementsByClassName('product-name')
     for (var i = 0; i < cartItemNames.length; i++) {
@@ -70,19 +70,22 @@ function addItemtoCart(title, price) {
             return
         }
     }
-    var cartRowContents = `<div class="chosen-product-details">
-                                <p class="product-name" id="product-name-cart">
-                                    ${title}
-                                </p>
-                                <p class="item-price" id="cart-item-price">
-                                    ${price}
-                                </p>
-                            </div>
-                            <div class="chosen-product-functions">
-                                <input type="number" class="item-quantity" value="1">
-                                <button class="removeBtn"><i class="fa fa-times" aria-hidden="true"></i>
-                                </button>
+    var cartRowContents = `<div class="chosen-product-item-list">
+                                <div class="chosen-product-details">
+                                    <p class="product-name" id="product-name-cart">
+                                        ${title}
+                                    </p>
+                                    <p class="item-price" id="cart-item-price">
+                                        ${price}
+                                    </p>
+                                </div>
+                                <div class="chosen-product-functions">
+                                    <input type="number" class="item-quantity" value="1">
+                                    <button class="removeBtn"><i class="fa fa-times" aria-hidden="true"></i>
+                                    </button>
+                                </div>
                             </div>`
+                        
     cartRow.innerHTML = cartRowContents
     cartItems.append(cartRow)
     cartRow.getElementsByClassName('removeBtn')[0].addEventListener('click', removeCartItem)
@@ -96,10 +99,9 @@ function updateCartTotal() {
     for (var i = 0; i < cartRows.length; i++) {
         var cartRow = cartRows[i]
         var priceElement = cartRow.getElementsByClassName('item-price')[0]
-        var quantityElement = cartRow.getElementsByClassName('item-quantity')
-        [0]
+        var quantityElement = cartRow.getElementsByClassName('item-quantity')[0]
         var price = parseFloat(priceElement.innerText.replace('Php ', ''))
-        var quantity = quantityElement.value
+        var quantity = Number(quantityElement.value)
         total = total + (price * quantity)
     }
     total = Math.round(total * 100) / 100
