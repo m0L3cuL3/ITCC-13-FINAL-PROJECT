@@ -199,6 +199,8 @@ p
     background-color: rgb(196, 196, 196);
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.075), 0 5px 20px 0 rgba(0, 0, 0, 0.205);
     transition: 0.25s;
+    position: absolute;
+    margin-top: 10%;
 }
 
 .input
@@ -327,12 +329,9 @@ p
     padding: 10px 15px;
 }
 
-.select-container
+.info-container
 {
-    padding: 10px 15px;
-    display: flex;
-    justify-content: space-between;
-    transform: translate(0%, 0%);
+    background-color: #969696;
 }
 
 #overlay

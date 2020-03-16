@@ -4,6 +4,7 @@ button#trackBtn
     font-size: 2.1vh;
     height: 100%;
     width: 24vh;
+    padding: 15px;
 }
 
 button.clearBtn

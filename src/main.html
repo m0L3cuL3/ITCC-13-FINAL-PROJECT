@@ -3,7 +3,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <script src="./js/order.js" async></script>
+    <link rel="stylesheet" href="./assets/css/buttons.css">
+    <link rel="stylesheet" href="./assets/css/products.css">
+    <!-- <script src="./js/order.js" async></script> -->
+    <script src="./js/modal.js" async></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins|Spartan|Merienda+One&display=swap" rel="stylesheet">   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Italian Foods</title>
@@ -33,7 +36,30 @@
             <div class="product-container">
                 <!-- CART -->
                 <div class="product-cart">
+                    <div class="cart-header">
+                        <h3 class="myCart">Reserve Seat</h3>
+                        <button class="clearBtn">Clear All</button>
+                    </div>
                     <div class="chosen-product-container">
+                        <form action="" method="post">
+                            <div class="name-container">
+                                <input type="text" class="customer-name">
+                            </div>
+                            <div class="num-people">
+                                <select id="peeps">
+                                    <option value="3">1-3 People</option>
+                                    <option value="5">3-5 People</option>
+                                    <option value="8">5-8 People</option>
+                                    <option value="10">8-10 People</option>
+                                </select>
+                            </div>
+                            <div class="date-time-container">
+                                <Label for="date">Date</Label>
+                                <input type="text" id="date">
+                                <label for="time">Time</label>
+                                <input type="text" id="time">
+                            </div>
+                        </form>
                         <!-- <div class="cart-item-container">
                             <div class="chosen-product-item-list">
                                 <div class="chosen-product-details">
@@ -55,9 +81,9 @@
 
                     <!-- CHECKOUT BUTTON -->
                     <div class="checkout-container">
-                        <p class="total-price">Total: Php 0</p>
+                        <p class="total-price">Status: </p>
                         
-                        <button class="checkoutBtn">
+                        <button data-modal-target="#modal" class="checkoutBtn">
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             Checkout
                         </button>
@@ -70,9 +96,9 @@
                         <div class="row" id="item1">
                             <div class="image" id="image1">
                                 <div class="hover">
-                                    <div class="add-to-cart">
+                                    <!-- <div class="add-to-cart">
                                         <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <p class="product-name">Tsuki Spaghetti</p>
@@ -81,9 +107,9 @@
                         <div class="row" id="item2">
                             <div class="image" id="image2">
                                 <div class="hover">
-                                    <div class="add-to-cart">
+                                    <!-- <div class="add-to-cart">
                                         <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <p class="product-name">Tsuki Pasta</p>
@@ -92,9 +118,9 @@
                         <div class="row" id="item3">
                             <div class="image" id="image3">
                                 <div class="hover">
-                                    <div class="add-to-cart">
+                                    <!-- <div class="add-to-cart">
                                         <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <p class="product-name">Italian Pizza</p>
@@ -105,9 +131,9 @@
                         <div class="row" id="item4">
                             <div class="image" id="image4">
                                 <div class="hover">
-                                    <div class="add-to-cart">
+                                    <!-- <div class="add-to-cart">
                                         <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <p class="product-name">Marzia's Lasagna</p>
@@ -118,9 +144,9 @@
                         <div class="row" id="item5">
                             <div class="image" id="image5">
                                 <div class="hover">
-                                    <div class="add-to-cart">
+                                    <!-- <div class="add-to-cart">
                                         <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <p class="product-name">Veggie Bread</p>
@@ -131,9 +157,9 @@
                         <div class="row" id="item6">
                             <div class="image" id="image6">
                                 <div class="hover">
-                                    <div class="add-to-cart">
+                                    <!-- <div class="add-to-cart">
                                         <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <p class="product-name">Seafood Carbonara</p>
@@ -143,7 +169,43 @@
                 </div>
             </div>
         </div>
+        <!-- modal -->
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h2 class="title">Checkout Form</h2>
+                <button data-close-button class="close-modal-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="info-container">
+                    <div class="receiver">
+                        <label for="receiver">Receiver</label>
+                        <input type="text" class="receiver-name" placeholder="Name">
+                    </div>
+                    <div class="address">
+                        <label for="address-info">Delivery Address</label>
+                        <input type="text" class="address-info" placeholder="Address">
+                    </div>
+                    <div class="comment">
+                        <label for="comment-info">Instruction for delivery</label>
+                        <input type="text" class="comment-info" placeholder="Example: No pineapples / Please drop it at the dog house">
+                    </div>
+                    <button class="purchaseBtn">Purchase</button>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h2 class="title">Checkout Form</h2>
+                <button data-close-button class="close-modal-button">&times;</button>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+        <div id="overlay"></div>
+
     </section>
+
     <section class="track-area" id="track">
         <div class="text-part">
             <h1>Keep track of the food you ordered!</h1>
@@ -153,10 +215,11 @@
             </div>
         </div>
     </section>
+
     <section class="about-area" id="about">
         <div class="text-part">
             <h1>About</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis dignissimos voluptatibus rem placeat fugit autem officia. Laborum itaque dolores, totam, consequatur, aliquid veritatis quis a optio facere nostrum fugit dicta?</p>
+            <p>Marzia's is a family owned business that was originally founded on 2019. It was ran by Ted Long, and then passed down to his son, Ted Jr. Marzia's prides itself on delivering the utmost quality of pastries and the freshest bread.  </p>
         </div>
     </section>
 

@@ -23,17 +23,31 @@ function ready() {
         button.addEventListener('click', addToCartClicked)
     }
 
+    var removeAllItems = document.getElementsByClassName('clearBtn')
+    for (var i = 0; i < removeAllItems.length; i++) {
+        var button = removeAllItems[i]
+        button.addEventListener('click', clearListItem)
+    }
+
     document.getElementsByClassName('checkoutBtn')[0].addEventListener('click', checkoutClicked)
 }
 
-function checkoutClicked() {
-    alert('Thank you for your purchase')
+function clearListItem() {
     var cartItems = document.getElementsByClassName('chosen-product-container')[0]
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
     }
     updateCartTotal()
 }
+
+// function checkoutClicked() {
+//     alert('Thank you for your purchase')
+//     var cartItems = document.getElementsByClassName('chosen-product-container')[0]
+//     while (cartItems.hasChildNodes()) {
+//         cartItems.removeChild(cartItems.firstChild)
+//     }
+//     updateCartTotal()
+// }
 
 function removeCartItem(event) {
     var buttonClicked = event.target
