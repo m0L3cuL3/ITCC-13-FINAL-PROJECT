@@ -40,7 +40,7 @@
     <div class="navbar">
         <a href="#home" class="logo">Marzia's</a>
         <ul class="nav">
-            <li><a href="#order">Order</a></li>
+            <li><a href="#order">Reservation</a></li>
             <li><a href="#track">Track Your Reservation</a></li>
             <li> <a href="#about">About Us</a></li>
         </ul>
