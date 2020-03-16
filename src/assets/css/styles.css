@@ -5,6 +5,39 @@ html
     animation: fade-in 0.5s ease-in forwards;
 }
 
+/* START */
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input, select{
+    margin: 5px 15px;
+}
+
+label{
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.checkout-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.checkoutBtn{
+    cursor: pointer;
+    border: none;
+    border-radius: 50px 50px 50px 50px;
+    color: white;
+    background-color: #408a61;
+    height: 5vh;
+}
+/* END */
+
 ::-webkit-scrollbar 
 {
     display: none;

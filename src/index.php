@@ -1,9 +1,43 @@
+<?php
+    include_once("./php/db_connection.php");
+    $insertdata=new DB_con();
+
+    if(!empty($_POST['customerName']) && !$_POST['numPersons'] == "" && !$_POST['timeReservation'] == "" && !$_POST['dateReservation'] == null){
+        if(isset($_POST['submit']))
+        {
+            $cname = $_POST['customerName'];
+            $num_person = $_POST['numPersons'];
+            $time_of_reservation = $_POST['timeReservation'];
+            $date_of_reservation = strtotime($_POST['dateReservation']);
+            $cdate = date('Y-m-d',$date_of_reservation);
+
+            $sql = $insertdata->insert($cname,$num_person,$time_of_reservation,$cdate);
+            if($sql)
+            {
+                echo "<script>alert('Reservation Complete!');</script>";
+            }
+            else
+            {
+                echo "<script>alert('Reservation Failed!');</script>";
+            }
+
+        }
+    } else {
+        echo "<script>alert('Error!');</script>";
+    }
+
+    
+
+    
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <script src="./js/order.js" async></script>
+    <link rel="stylesheet" href="./assets/css/products.css">
+    <link rel="stylesheet" href="./assets/css/buttons.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins|Spartan|Merienda+One&display=swap" rel="stylesheet">   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Italian Foods</title>
@@ -13,7 +47,7 @@
         <a href="#home" class="logo">Marzia's</a>
         <ul class="nav">
             <li><a href="#order">Order</a></li>
-            <li><a href="#track">Track Your Order</a></li>
+            <li><a href="#track">Track Your Reservation</a></li>
             <li> <a href="#about">About Us</a></li>
         </ul>
     </div>
@@ -34,33 +68,22 @@
                 <!-- CART -->
                 <div class="product-cart">
                     <div class="chosen-product-container">
-                        <!-- <div class="cart-item-container">
-                            <div class="chosen-product-item-list">
-                                <div class="chosen-product-details">
-                                    <p class="product-name" id="product-name-cart">
-                                        Tsuki Spaghetti
-                                    </p>
-                                    <p class="item-price" id="cart-item-price">
-                                        Php 499.99
-                                    </p>
-                                </div>
-                                <div class="chosen-product-functions">
-                                    <input type="number" class="item-quantity">
-                                    <button class="removeBtn"><i class="fa fa-times" aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                            </div> 
-                        </div> -->
-                    </div>
-
-                    <!-- CHECKOUT BUTTON -->
-                    <div class="checkout-container">
-                        <p class="total-price">Total: Php 0</p>
-                        
-                        <button class="checkoutBtn">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            Checkout
-                        </button>
+                       <form action="#order" method="post">
+                            <label for="customerName">Name</label>
+                            <input type="text" name="customerName" id="">
+                            <label for="numPersons">Number of people</label>
+                            <select name="numPersons">
+                                <option value="" disabled selected>Select Option</option>
+                                <option value="1-2">1 - 2 Persons</option>
+                                <option value="3-5">3 - 5 Persons</option>
+                                <option value="8-10">8 - 10 Persons</option>
+                            </select> 
+                            <label for="timeReservation">Time of Reservation</label>
+                            <input type="time" name="timeReservation" id="" placeholder="e.g. 12:00AM">
+                            <label for="">Date of Reservation</label>
+                            <input type="date" name="dateReservation" id="" placeholder="e.g. 03/20/2020 or March 3, 2020">
+                            <input type="submit" name="submit" class="checkoutBtn" value="Make Reservations">
+                       </form>
                     </div>
                 </div>
 
@@ -146,7 +169,7 @@
     </section>
     <section class="track-area" id="track">
         <div class="text-part">
-            <h1>Keep track of the food you ordered!</h1>
+            <h1>Keep track of your reservation!</h1>
             <div class="inputField">
                 <input type="text" class="input" placeholder="Reference Number">
                 <button id="trackBtn">Track</button>
