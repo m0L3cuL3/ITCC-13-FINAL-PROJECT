@@ -1,0 +1,115 @@
+/* specific button design */
+button#trackBtn
+{
+    font-size: 2.1vh;
+    height: 100%;
+    width: 24vh;
+}
+
+button.clearBtn
+{
+    color: rgb(236, 236, 236);
+    background: rgb(95, 83, 83);
+    border-color: rgb(77, 57, 57);
+}
+
+button.clearBtn:hover
+{
+    background: rgb(184, 64, 64);
+    border-color: rgb(184, 64, 64);
+}
+
+button.checkoutBtn
+{
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    font-size: 2.5vh;
+}
+
+button.removeBtn
+{
+    height: 8%;
+    width: 10%;
+    position: absolute;
+    right: 6.5;
+    font-size: 2.26vh;
+    background: rgb(184, 64, 64);
+    border-color: rgb(184, 64, 64);
+}
+
+button.removeBtn:hover
+{
+    background: #6e2626;
+    border-color: #d19999;
+    cursor: pointer;
+}
+
+button.next1
+{
+    height: 30px;
+    width: 150px;
+    font-size: 2vh;
+}
+
+/* all default button design */
+button
+{
+    background: #4ab382;
+	color: rgb(31, 31, 31);
+	border: 1px solid #4ab382;
+	transition: .6s;
+    overflow: hidden;
+    transform: translate(0%, 0%);
+}
+
+button:focus
+{
+	outline: none;
+}
+
+button:before
+{
+	content: '';
+	display: block;
+	position: absolute;
+	background: rgba(255,255,255,.5);
+	width: 60px;
+	height: 100%;
+	left: 0;
+    top: 0;
+	opacity: .5s;
+	filter: blur(30px);
+	transform: translateX(-130px) skewX(-15deg);
+}
+
+button:after
+{
+	content: '';
+	display: block;
+	position: absolute;
+	background: rgba(255,255,255,.2);
+	width: 30px;
+	height: 100%;
+	left: 30;
+	top: 0;
+	opacity: .5s;
+	filter: blur(30px);
+	transform: translate(-100px) scaleX(-15deg);
+}
+
+button:hover
+{
+    background: #266e53;
+    border-color: #99d1a7;
+    color: #e9e9e9;
+    cursor: pointer;
+}
+
+button:hover:before
+{
+	transform: translateX(300px) skewX(-15deg);
+	opacity: 1;
+	transition: .7s;
+}
