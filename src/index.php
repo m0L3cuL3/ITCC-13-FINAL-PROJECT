@@ -2,15 +2,15 @@
     include_once("./php/db_connection.php");
     $insertdata=new DB_con();
 
-    if(!empty($_POST['customerName']) && !$_POST['numPersons'] == "" && !$_POST['timeReservation'] == "" && !$_POST['dateReservation'] == null){
-        if(isset($_POST['submit']))
-        {
+    
+    if(isset($_POST['submit']))
+    {
+        if(!empty($_POST['customerName']) && !$_POST['numPersons'] == "" && !$_POST['timeReservation'] == "" && !$_POST['dateReservation'] == null){
             $cname = $_POST['customerName'];
             $num_person = $_POST['numPersons'];
             $time_of_reservation = $_POST['timeReservation'];
             $date_of_reservation = strtotime($_POST['dateReservation']);
             $cdate = date('Y-m-d',$date_of_reservation);
-
             $sql = $insertdata->insert($cname,$num_person,$time_of_reservation,$cdate);
             if($sql)
             {
@@ -20,16 +20,10 @@
             {
                 echo "<script>alert('Reservation Failed!');</script>";
             }
-
+        } else {
+            echo "<script>alert('Incomplete Data provided, Try Again.');</script>";
         }
-    } else {
-        echo "<script>alert('Error!');</script>";
-    }
-
-    
-
-    
-
+    } 
 ?>
 <html lang="en">
 <head>
